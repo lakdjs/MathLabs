@@ -7,42 +7,11 @@ namespace ConsoleApplication1
     {
         public static void Main(string[] args)
         {
-            //last kt
-            Console.WriteLine("напишите строку");
-            string a =  Console.ReadLine();
-            
+            var calc = new Sqrt();
 
-
-            int Determine(string s)
-            {
-                int left = 0;
-                int right = 0;
-                int max = 0;
-
-                
-                var chars = s.ToCharArray();
-                string sub = "";
-
-                while (right < chars.Length)
-                {
-                    if (sub.Contains(chars[right]))
-                    {
-                        sub = "";
-                        left++;
-                    }
-                    else
-                    {
-                        sub += chars[right];
-                        right++;
-                        max = Math.Max(max, sub.Length);
-                    }
-                }
-
-                return max;
-            }
-
-            int maxlen = Determine(a);
-            Console.WriteLine(maxlen);
+            Console.WriteLine("Введите число, из которого нужно вычислить корень");
+            int num = calc.CorrectNum();
+            calc.Calculate(num);
         }
     }
 }
